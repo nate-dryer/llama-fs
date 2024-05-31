@@ -39,6 +39,35 @@ We built LlamaFS on a Python backend, leveraging the Llama3 model through Groq f
 - Find and remove old/unused files
 - We have some really cool ideas for - filesystem diffs are hard...
 
+## GitHub Actions Workflow
+
+### Setting Up the Environment
+
+To set up the environment using GitHub Actions, follow the workflow defined in `.github/workflows/python-environment-setup.yml`. This workflow installs the necessary Python dependencies and sets up a Python environment tailored for the project.
+
+### Installing Dependencies
+
+To install project dependencies via GitHub Actions, add the following step to your workflow:
+
+```yaml
+- name: Install dependencies
+  run: |
+    pip install -r requirements.txt
+```
+
+### Running the Project
+
+To run the project using GitHub Actions, you can define a job in your workflow that executes the necessary commands to start the server or any other scripts:
+
+```yaml
+- name: Run the project
+  run: |
+    python server.py
+```
+
+### Deploying the Project
+
+To deploy the project via GitHub Actions, ensure you have a workflow file (e.g., `.github/workflows/deploy.yml`) that defines the steps for building and deploying your project to the desired environment.
 
 ## Installation
 
